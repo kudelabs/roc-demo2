@@ -2,6 +2,8 @@ class RepliesController < ApplicationController
   def create
     @message = Message.find(params[:message_id])
     rep = @message.replies.create(params[:reply])
+    rep.user = current_user
+    
     respond_to do |format|
       format.html {
         if rep.save

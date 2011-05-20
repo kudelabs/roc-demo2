@@ -8,7 +8,7 @@
       <ul>
       <% msg.replies.each do |rep| %>
         <li>
-	  		<div class="comment_body left">&raquo; &nbsp;<%=rep.body %></div>
+	  		<div class="comment_body left">&raquo; &nbsp;<%=rep.body %> (<%=rep.email%>)</div>
 	  		<div class="timestamp right"><%=time_ago_in_words(rep.created_at)%> ago</div>
             <div class="clear">&nbsp;</div>
         </li>

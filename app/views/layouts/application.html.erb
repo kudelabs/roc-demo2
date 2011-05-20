@@ -7,12 +7,19 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-	
+
 <div class="frame">
-	<h1>Rails on Campus - Weibo</h1>
-	<div class="page">
-		<%= yield %>
-	</div>
+  <h1>Rails on Campus - Weibo</h1>
+  <div class="page">
+  <% if logged_in? %>
+    <p align="right">
+      Welcome! <strong><%= current_user.email %></strong>
+      <%= link_to "Logout", logout_path %>
+    <p>
+  <% end %>
+  
+  <%= yield %>
+  </div>
 </div>
 
 </body>
