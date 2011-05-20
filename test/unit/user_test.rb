@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  test "should set the name through email" do
+    user = User.new(:email => "shaokun.wu@gmail.com", :password => "a")
+    assert user.save
+    assert_equal "shaokun.wu", user.name
   end
 end

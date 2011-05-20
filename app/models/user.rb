@@ -5,4 +5,11 @@ class User < ActiveRecord::Base
   
   has_many :messages
   has_many :replies
+  
+  before_create :set_name
+  
+  protected
+  def set_name
+    self.name ||= email.split("@").first
+  end
 end
