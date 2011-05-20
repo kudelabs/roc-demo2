@@ -1,0 +1,10 @@
+<li class="message" id="<%=dom_id message%>">
+  <%= link_to %{
+  <div class='message_body'>#{message.body} (#{message.email})</div>
+  <div class="count left">
+    #{pluralize(message.replies.size, 'reply')}
+  </div>
+  <div class="timestamp right">#{time_ago_in_words(message.created_at)}</div>
+  <div class="clear">&nbsp;</div>
+  }.html_safe, message %>
+</li>

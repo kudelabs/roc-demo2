@@ -46,8 +46,23 @@ class MessagesController < ApplicationController
     respond_to do |format|
       if @message.save
         format.html { redirect_to(messages_url) }
+        format.js {
+          render :update do |page|
+            page['message_body'].value = ''
+            page.insert_html :top, 'messages',
+              :partial => 'message',
+              :locals => {:message => @message}
+            page[@message].visual_effect :slide_down, :duration => 0.5
+          end
+        }
       else
-        format.html { render :action => "new" }
+        format.html {
+          @messages = Message.all
+          render :action => "index"
+        }
+        format.js {
+          head :error
+        }
       end
     end
   end

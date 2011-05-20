@@ -1,13 +1,13 @@
 class SessionsController < ApplicationController
   skip_before_filter :require_logged_in
   
-  def destroy
+  def destroy # logout
     session[:user_id] = nil
     
     redirect_to login_path
   end
   
-  def create
+  def create # login
     user = User.find_by_email_and_password(params[:email], params[:password])
     
     if user
