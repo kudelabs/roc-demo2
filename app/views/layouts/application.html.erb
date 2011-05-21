@@ -11,12 +11,12 @@
 <div class="frame">
   <h1>Rails on Campus - Weibo</h1>
   <div class="page">
-  <% if logged_in? %>
-    <p align="right">
+    <div class='header'>
+	<% if logged_in? %>
       Welcome! <strong><%= current_user.email %></strong>
       <%= link_to "Logout", logout_path %>
-    <p>
-  <% end %>
+	<% end %>
+    </div>
   
   <%= yield %>
   </div>

@@ -71,10 +71,15 @@ body {
 .page {
 	border: 2px solid #57a4f2;
 	margin-top: 2em;
-	padding: 2em;
+	padding: 0 2em 2em 2em;
 	
 	background-color: #ffe5c5;
 	color: #101;
+}
+
+.page div.header {
+	text-align: right;
+	margin: 1em 0;
 }
 
 .page h3 {

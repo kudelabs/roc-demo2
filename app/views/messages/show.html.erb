@@ -5,7 +5,7 @@
 </div>
 
 <div class="message">
-  Someone said:
+  <strong><%=@message.user.name%></strong> said:
   <div class="message_body"><%= @message.body %></div>
   <div class="destroy left">
     <%= link_to 'Delete this message', @message, :method => :delete,
