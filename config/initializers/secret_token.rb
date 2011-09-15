@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Rocweibo::Application.config.secret_token = '24c46f172913def3a12bd567fa1c8ca2ea2a261171322cb5ff2b48580ff7ecdf9abeab73e07a9661eb775594116c8ffde0b78d7d7ce1eb9e4dc6c0108aa80795'
+Rocweibo::Application.config.secret_token = 'e5ce437f1d155bb739735fc821cb9664639e1174cd1b1bb7c8311ea52b6c9f17ca1ca85b6d4072401a13fa7cfaec2035cf4c149a45df792d32493643420a119d'

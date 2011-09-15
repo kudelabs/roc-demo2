@@ -47,13 +47,9 @@ class MessagesController < ApplicationController
       if @message.save
         format.html { redirect_to(messages_url) }
         format.js {
-          render :update do |page|
-            page['message_body'].value = ''
-            page.insert_html :top, 'messages',
-              :partial => 'message',
-              :locals => {:message => @message}
-            page[@message].visual_effect :slide_down, :duration => 0.5
-          end
+          render json: {
+            :new_message => render_to_string(:partial => "message", :object => @message)
+          }, content_type: 'text/json'
         }
       else
         format.html {
