@@ -1,4 +1,12 @@
 Rocweibo::Application.routes.draw do
+  namespace :api do
+    resources :messages
+    
+    namespace :v2 do
+      resources :messages
+    end
+  end
+  
   resources :users
   resources :sessions
 

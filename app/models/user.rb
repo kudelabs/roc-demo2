@@ -8,6 +8,11 @@ class User < ActiveRecord::Base
   
   before_create :set_name
   
+  
+  def self.authenticate(email, password)
+    User.find_by_email_and_password(email, password)
+  end
+  
   protected
   def set_name
     self.name ||= email.split("@").first
